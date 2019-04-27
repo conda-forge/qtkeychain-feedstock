@@ -3,7 +3,7 @@ About qtkeychain
 
 Home: https://github.com/frankosterfeld/qtkeychain
 
-Package license: Modified BSD
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
