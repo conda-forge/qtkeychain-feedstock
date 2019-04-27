@@ -1,15 +1,12 @@
-{% set name = "qtkeychain" %}
 {% set version = "0.9.1" %}
-{% set sha256 = "9c2762d9d0759a65cdb80106d547db83c6e9fdea66f1973c6e9014f867c6f28e" %}
 
 package:
-  name: {{ name|lower }}
+  name: qtkeychain
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/frankosterfeld/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/frankosterfeld/qtkeychain/archive/v{{ version }}.tar.gz
+  sha256: 9c2762d9d0759a65cdb80106d547db83c6e9fdea66f1973c6e9014f867c6f28e
 
 build:
   number: 1001
@@ -27,14 +24,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libqt5keychain.so  # [linux]
-    - test -f ${PREFIX}/lib/libqt5keychain.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libqt5keychain${SHLIB_EXT}  # [not win]
     - if not exist %LIBRARY_BIN%\\qt5keychain.dll exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\qt5keychain.lib exit 1  # [win]
 
 about:
   home: https://github.com/frankosterfeld/qtkeychain
-  license: Modified BSD
+  license: BSD-3-Clause
   license_file: COPYING
   summary: 'QtKeychain is a Qt API to store passwords and other secret data securely'
 
