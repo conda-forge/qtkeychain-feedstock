@@ -1,10 +1,10 @@
 --- CMakeLists.txt.old	2019-05-08 13:27:11.553278795 +1000
-+++ CMakeLists.txt	2019-05-08 13:27:41.349623250 +1000
++++ CMakeLists.txt	2019-05-08 13:50:22.951421315 +1000
 @@ -1,6 +1,6 @@
  cmake_minimum_required(VERSION 2.8.11)
  project(qtkeychain)
 -
-+cmake_policy(SET CMP0025 NEW)
++cmake_policy(SET CMP0025 OLD)
  include(FindPkgConfig)
  
  ###
