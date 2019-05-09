@@ -11,9 +11,6 @@ export CC=$(basename ${CC})
 export CXX=$(basename ${CXX})
 
 if [[ ${HOST} =~ .*darwin.* ]]; then
-  # Avoid Xcode
-  cp "${RECIPE_DIR}"/xcrun .
-  cp "${RECIPE_DIR}"/xcodebuild .
   # Some test runs 'clang -v', but I do not want to add it as a requirement just for that.
   ln -s "${CXX}" ${HOST}-clang || true
   # For ltcg we cannot use libtool (or at least not the macOS 10.9 system one) due to lack of LLVM bitcode support.
