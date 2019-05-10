@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-05-10 14:53:09.638127912 +1000
++++ CMakeLists.txt	2019-05-10 14:54:45.339884659 +1000
+@@ -1,5 +1,8 @@
+ cmake_minimum_required(VERSION 2.8.11)
+ project(qtkeychain)
++enable_language(C)
++enable_language(CXX)
++
+ 
+ include(FindPkgConfig)
+ 
