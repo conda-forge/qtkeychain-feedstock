@@ -6,9 +6,9 @@ cd build/
 # have to set CMAKE_INSTALL_LIBDIR otherwise it ends up under 'x86_64-linux-gnu'
 
 cmake \
-    -D CMAKE_INSTALL_PREFIX=$PREFIX \
-    -D CMAKE_INSTALL_LIBDIR=$PREFIX/lib \
-    ..
+    -D CMAKE_INSTALL_PREFIX=${PREFIX} \
+    -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
+    ${SRC_DIR}
 
 make -j$CPU_COUNT
 # No "make check" available
@@ -21,5 +21,5 @@ make install
 # See the GMT feedstock for similar problem
 
 if [[ "$(uname)" == "Darwin" ]];then
-    install_name_tool -id $PREFIX/lib/libqt5keychain.${PKG_VERSION}.dylib $PREFIX/lib/libqt5keychain.${PKG_VERSION}.dylib
+    install_name_tool -id ${PREFIX}/lib/libqt5keychain.${PKG_VERSION}.dylib ${PREFIX}/lib/libqt5keychain.${PKG_VERSION}.dylib
 fi
