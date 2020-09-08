@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: qtkeychain
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/frankosterfeld/qtkeychain/archive/v{{ version }}.tar.gz
-  sha256: 5f916cd97843de550467db32d2e10f218b904af5b21cfdfcc7c6425d7dfc3ec2
+  sha256: ff83d7fa7b5e87d2bc1b9cd74edfd40f356092a70d32c0119e4be6b5b9d802e4
   patches:
     - enable_language.patch
 
 build:
-  skip: True  # [win and vc<14]
+  skip: true  # [win and vc<14]
   number: 0
 
 requirements:
@@ -35,7 +35,7 @@ about:
   home: https://github.com/frankosterfeld/qtkeychain
   license: BSD-3-Clause
   license_file: COPYING
-  summary: 'QtKeychain is a Qt API to store passwords and other secret data securely'
+  summary: QtKeychain is a Qt API to store passwords and other secret data securely
 
 extra:
   recipe-maintainers:
