@@ -5,11 +5,9 @@ Home: https://github.com/frankosterfeld/qtkeychain
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qtkeychain-feedstock/blob/master/LICENSE.txt)
 
 Summary: QtKeychain is a Qt API to store passwords and other secret data securely
-
-
 
 Current build status
 ====================
