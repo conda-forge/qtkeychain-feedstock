@@ -1,4 +1,4 @@
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: qtkeychain
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/frankosterfeld/qtkeychain/archive/v{{ version }}.tar.gz
-  sha256: cc547d58c1402f6724d3ff89e4ca83389d9e2bdcfd9ae3d695fcdffa50a625a8
+  sha256: 5c04ad1c2f1142197544ddbce249c73b45c724bd683e6dc89bdefbc8e6be36e7
 
 build:
   skip: true  # [win and vc<14]
