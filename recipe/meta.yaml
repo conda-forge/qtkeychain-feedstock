@@ -22,8 +22,10 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - qt
+    - libsecret  # [unix]
   run:
     - qt
+    - libsecret  # [unix]
 
 test:
   commands:
