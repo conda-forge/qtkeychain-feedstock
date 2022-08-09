@@ -23,8 +23,11 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - qt-main
+    - libsecret  # [linux]
   run:
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
     - qt-main
+    - libsecret  # [linux]
 
 test:
   commands:
