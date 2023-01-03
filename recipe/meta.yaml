@@ -10,7 +10,7 @@ source:
 
 build:
   skip: true  # [win and vc<14]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('qtkeychain', max_pin='x.x') }}
 
@@ -24,10 +24,12 @@ requirements:
   host:
     - qt-main
     - libsecret  # [linux]
+    - zlib       # [linux]
   run:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
     - qt-main
     - libsecret  # [linux]
+    - zlib       # [linux]
 
 test:
   commands:

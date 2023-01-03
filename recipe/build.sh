@@ -5,7 +5,7 @@ cd build/
 
 # have to set CMAKE_INSTALL_LIBDIR otherwise it ends up under 'x86_64-linux-gnu'
 
-cmake \
+cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
     ${SRC_DIR}
