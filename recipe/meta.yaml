@@ -1,4 +1,4 @@
-{% set version = "0.14.2" %}
+{% set version = "0.14.3" %}
 
 package:
   name: qtkeychain
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/frankosterfeld/qtkeychain/archive/{{ version }}.tar.gz
-  sha256: cf2e972b783ba66334a79a30f6b3a1ea794a1dc574d6c3bebae5ffd2f0399571
+  sha256: a22c708f351431d8736a0ac5c562414f2b7bb919a6292cbca1ff7ac0849cb0a7
 
 build:
   skip: true  # [win and vc<14]
@@ -20,13 +20,13 @@ requirements:
     - cmake
     - make  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - qt-main
     - libsecret  # [linux]
     - zlib       # [linux]
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
     - qt-main
     - libsecret  # [linux]
     - zlib       # [linux]
