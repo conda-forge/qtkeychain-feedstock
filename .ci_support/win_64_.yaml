@@ -10,6 +10,8 @@ cxx_compiler:
 - vs2019
 qt_main:
 - '5.15'
+qtkeychain:
+- '0.14'
 target_platform:
 - win-64
 vc:
