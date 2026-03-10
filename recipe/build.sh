@@ -22,5 +22,5 @@ make install
 # See the GMT feedstock for similar problem
 
 if [[ "$(uname)" == "Darwin" ]];then
-    install_name_tool -id ${PREFIX}/lib/libqt5keychain.${PKG_VERSION}.dylib ${PREFIX}/lib/libqt5keychain.${PKG_VERSION}.dylib
+    install_name_tool -id ${PREFIX}/lib/libqt6keychain.${PKG_VERSION}.dylib ${PREFIX}/lib/libqt6keychain.${PKG_VERSION}.dylib
 fi
