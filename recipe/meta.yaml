@@ -10,7 +10,7 @@ source:
 
 build:
   skip: true  # [win and vc<14]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('qtkeychain', max_pin='x.x') }}
 
@@ -23,19 +23,19 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - qt-main
+    - qt6-main
     - libsecret  # [linux]
     - zlib       # [linux]
   run:
-    - qt-main
+    - qt6-main
     - libsecret  # [linux]
     - zlib       # [linux]
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libqt5keychain${SHLIB_EXT}  # [not win]
-    - if not exist %LIBRARY_BIN%\\qt5keychain.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\qt5keychain.lib exit 1  # [win]
+    - test -f ${PREFIX}/lib/libqt6keychain${SHLIB_EXT}  # [not win]
+    - if not exist %LIBRARY_BIN%\\qt6keychain.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\qt6keychain.lib exit 1  # [win]
 
 about:
   home: https://github.com/frankosterfeld/qtkeychain
