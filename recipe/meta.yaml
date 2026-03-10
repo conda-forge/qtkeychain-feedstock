@@ -25,6 +25,7 @@ requirements:
   host:
     - qt6-main
     - libsecret  # [linux]
+    - glib       # [linux]
     - zlib       # [linux]
   run:
     - qt6-main
