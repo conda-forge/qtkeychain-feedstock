@@ -44,6 +44,7 @@ outputs:
   - name: qtkeychain-qt6
     script: build_qt6.sh  # [unix]
     script: bld_qt6.bat  # [win]
+    skip: true  # [ppc64le]
     requirements:
       build:
         - pkg-config  # [unix]
