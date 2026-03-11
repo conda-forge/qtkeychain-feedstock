@@ -9,7 +9,7 @@ source:
   sha256: f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22
 
 build:
-  skip: true  # [win and vc<14]
+  skip: true  # [(win and vc<14) or ppc64le]
   number: 1
   run_exports:
     - {{ pin_subpackage('qtkeychain', max_pin='x.x') }}
@@ -44,7 +44,6 @@ outputs:
   - name: qtkeychain-qt6
     script: build_qt6.sh  # [unix]
     script: bld_qt6.bat  # [win]
-    skip: true  # [ppc64le]
     requirements:
       build:
         - pkg-config  # [unix]
