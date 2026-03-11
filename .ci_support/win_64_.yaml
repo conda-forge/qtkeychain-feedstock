@@ -9,7 +9,9 @@ channel_targets:
 cxx_compiler:
 - vs2022
 qt6_main:
-- '6.9'
+- '6.10'
+qt_main:
+- '5.15'
 qtkeychain:
 - '0.15'
 target_platform:

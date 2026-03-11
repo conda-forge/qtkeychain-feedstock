@@ -82,6 +82,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qtkeychain-green.svg)](https://anaconda.org/conda-forge/qtkeychain) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qtkeychain.svg)](https://anaconda.org/conda-forge/qtkeychain) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qtkeychain.svg)](https://anaconda.org/conda-forge/qtkeychain) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qtkeychain.svg)](https://anaconda.org/conda-forge/qtkeychain) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qtkeychain--qt6-green.svg)](https://anaconda.org/conda-forge/qtkeychain-qt6) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qtkeychain-qt6.svg)](https://anaconda.org/conda-forge/qtkeychain-qt6) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qtkeychain-qt6.svg)](https://anaconda.org/conda-forge/qtkeychain-qt6) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qtkeychain-qt6.svg)](https://anaconda.org/conda-forge/qtkeychain-qt6) |
 
 Installing qtkeychain
 =====================
@@ -93,16 +94,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `qtkeychain` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `qtkeychain, qtkeychain-qt6` can be installed with `conda`:
 
 ```
-conda install qtkeychain
+conda install qtkeychain qtkeychain-qt6
 ```
 
 or with `mamba`:
 
 ```
-mamba install qtkeychain
+mamba install qtkeychain qtkeychain-qt6
 ```
 
 It is possible to list all of the versions of `qtkeychain` available on your platform with `conda`:
