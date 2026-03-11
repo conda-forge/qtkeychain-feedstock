@@ -23,12 +23,12 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - qt5-main
+    - qt-main
     - libsecret  # [linux]
     - glib       # [linux]
     - zlib       # [linux]
   run:
-    - qt5-main
+    - qt-main
     - libsecret  # [linux]
     - zlib       # [linux]
 
@@ -43,7 +43,7 @@ outputs:
   
   - name: qtkeychain-qt6
     script: build_qt6.sh  # [unix]
-    script: build_qt6.bat  # [win]
+    script: bld_qt6.bat  # [win]
     requirements:
       build:
         - pkg-config  # [unix]
