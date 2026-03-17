@@ -13,6 +13,8 @@ else
     QT_HOST_PATH="$PREFIX"
 fi
 
+qtpaths --query QT_INSTALL_PREFIX
+
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
