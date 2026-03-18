@@ -13,6 +13,9 @@ else
     QT_HOST_PATH="$PREFIX"
 fi
 
+# So cmake can find qtpaths
+export PATH=${QT_HOST_PATH}/lib/qt6/bin:${PATH}
+
 qtpaths --query QT_INSTALL_PREFIX
 
 cmake ${CMAKE_ARGS} \
@@ -20,7 +23,6 @@ cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
     -D BUILD_WITH_QT6=TRUE \
     -D QT_HOST_PATH=${QT_HOST_PATH} \
-    -D QT_INSTALL_PREFIX=${PREFIX} \
     ${SRC_DIR}
 
 make -j$CPU_COUNT
