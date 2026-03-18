@@ -1,17 +1,20 @@
 diff -ru qtkeychain-0.15.0-orig/cmake/Modules/ECMQueryQt.cmake qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake
 --- qtkeychain-0.15.0-orig/cmake/Modules/ECMQueryQt.cmake	2026-03-19 08:58:01.584879036 +1000
-+++ qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake	2026-03-19 09:35:37.101545441 +1000
-@@ -60,9 +60,12 @@
-     find_package(Qt6 COMPONENTS CoreTools QUIET CONFIG)
-     if (TARGET Qt6::qtpaths)
-         get_target_property(_qtpaths_executable Qt6::qtpaths LOCATION)
-+        message(WARNING "_qtpaths_executable = ${_qtpaths_executable}")
-+        
++++ qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake	2026-03-19 09:51:10.538410459 +1000
+@@ -63,6 +63,7 @@
  
--        set(QUERY_EXECUTABLE ${_qtpaths_executable}
-+        set(QUERY_EXECUTABLE "$ENV{QT_HOST_PATH}/lib/qt6/bin/qtpaths"
+         set(QUERY_EXECUTABLE ${_qtpaths_executable}
              CACHE FILEPATH "Location of the Qt6 qtpaths executable")
 +        message(WARNING "_qtpaths_executable = ${QUERY_EXECUTABLE}")
          set(_exec_name_text "Qt6 qtpaths")
          set(_cli_option "--query")
      endif()
+@@ -85,7 +86,7 @@
+         endif()
+     endif()
+     execute_process(
+-        COMMAND ${QUERY_EXECUTABLE} ${_cli_option} "${qt_variable}"
++        COMMAND "$ENV{QT_HOST_PATH}/lib/qt6/bin/qtpaths" ${_cli_option} "${qt_variable}"
+         RESULT_VARIABLE return_code
+         OUTPUT_VARIABLE output
+     )
