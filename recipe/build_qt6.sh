@@ -15,8 +15,9 @@ cd build/
 #    QT_HOST_PATH="$PREFIX"
 #fi
 
+conda list
 
-cmake ${CMAKE_ARGS} --trace \
+cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
     -D BUILD_WITH_QT6=TRUE \
