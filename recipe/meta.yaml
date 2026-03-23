@@ -7,9 +7,6 @@ package:
 source:
   url: https://github.com/frankosterfeld/qtkeychain/archive/{{ version }}.tar.gz
   sha256: f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22
-  patches:
-    # workaround qtpaths not being found
-    - qtpaths.patch
 
 build:
   skip: true  # [(win and vc<14) or ppc64le]
