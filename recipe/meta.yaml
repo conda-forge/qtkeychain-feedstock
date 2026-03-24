@@ -22,15 +22,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-  host:
-    - qt-main
-    - libsecret  # [linux]
-    - glib       # [linux]
-    - zlib       # [linux]
-  run:
-    - qt-main
-    - libsecret  # [linux]
-    - zlib       # [linux]
 
 test:
   commands:
@@ -40,6 +31,25 @@ test:
     
 outputs:
   - name: qtkeychain
+    script: build.sh  # [unix]
+    script: bld.bat  # [win]
+    requirements:
+      build:
+        - pkg-config  # [unix]
+        - cmake
+        - make  # [unix]
+        - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - {{ compiler('cxx') }}
+      host:
+        - qt-main
+        - libsecret  # [linux]
+        - glib       # [linux]
+        - zlib       # [linux]
+      run:
+        - qt-main
+        - libsecret  # [linux]
+        - zlib       # [linux]
   
   - name: qtkeychain-qt6
     script: build_qt6.sh  # [unix]
