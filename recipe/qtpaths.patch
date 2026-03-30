@@ -1,0 +1,13 @@
+diff -ru qtkeychain-0.15.0-orig/cmake/Modules/ECMQueryQt.cmake qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake
+--- qtkeychain-0.15.0-orig/cmake/Modules/ECMQueryQt.cmake	2026-03-30 14:07:50.522164259 +1000
++++ qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake	2026-03-30 19:05:21.642475644 +1000
+@@ -60,8 +60,7 @@
+     find_package(Qt6 COMPONENTS CoreTools QUIET CONFIG)
+     if (TARGET Qt6::qtpaths)
+         get_target_property(_qtpaths_executable Qt6::qtpaths LOCATION)
+-
+-        set(QUERY_EXECUTABLE ${_qtpaths_executable}
++        set(QUERY_EXECUTABLE "qtpaths"
+             CACHE FILEPATH "Location of the Qt6 qtpaths executable")
+         set(_exec_name_text "Qt6 qtpaths")
+         set(_cli_option "--query")
