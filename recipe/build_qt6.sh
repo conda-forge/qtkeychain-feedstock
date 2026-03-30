@@ -19,6 +19,7 @@ conda list
 ls -l ${PREFIX}/lib/qt6/bin/
 ${PREFIX}/lib/qt6/bin/qtpaths -h
 ${PREFIX}/lib/qt6/bin/qtpaths --query QT_INSTALL_PREFIX
+echo $?
 
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
