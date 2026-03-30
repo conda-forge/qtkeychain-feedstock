@@ -16,6 +16,8 @@ cd build/
 #fi
 
 conda list
+ls -l ${PREFIX}/lib/qt6/bin/
+${PREFIX}/lib/qt6/bin/qtpaths -h
 
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
