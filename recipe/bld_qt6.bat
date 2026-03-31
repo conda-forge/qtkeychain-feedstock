@@ -1,7 +1,7 @@
 mkdir build
 cd build
 
-set PATH=%LIBRARY_PREFIX%/lib/qt6/bin:%PATH%
+set PATH=%LIBRARY_PREFIX%/lib/qt6/bin;%PATH%
 where qtpaths
 
 cmake -G "NMake Makefiles" ^
