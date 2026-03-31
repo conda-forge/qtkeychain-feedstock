@@ -26,8 +26,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
+    - qt-main    # [build_platform != target_platform]
   host:
-    - qt-main
+    - qt-main    
     - libsecret  # [linux]
     - glib       # [linux]
     - zlib       # [linux]
