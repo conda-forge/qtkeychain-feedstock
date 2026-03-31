@@ -16,6 +16,7 @@ cd build/
 #fi
 
 export PATH=${PREFIX}/lib/qt6/bin:${PATH}
+which qtpaths
 
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -27,12 +28,3 @@ make -j$CPU_COUNT
 # No "make check" available
 make install
 
-# we are fixing the paths to dynamic library files inside library 
-# because something in make install is doubling up the
-# path to the library files.  Anyone who knows how to solve that
-# problem is free to contact the maintainers.
-# See the GMT feedstock for similar problem
-
-if [[ "$(uname)" == "Darwin" ]];then
-    install_name_tool -id ${PREFIX}/lib/libqt6keychain.${PKG_VERSION}.dylib ${PREFIX}/lib/libqt6keychain.${PKG_VERSION}.dylib
-fi
