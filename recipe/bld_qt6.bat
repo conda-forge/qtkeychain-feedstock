@@ -1,6 +1,9 @@
 mkdir build
 cd build
 
+set PATH=%LIBRARY_PREFIX%/lib/qt6/bin:%PATH%
+where qtpaths
+
 cmake -G "NMake Makefiles" ^
     -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_BUILD_TYPE=Release ^
