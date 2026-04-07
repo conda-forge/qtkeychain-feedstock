@@ -56,7 +56,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - qt-main    # [build_platform != target_platform]
+        - qt6-main    # [build_platform != target_platform]
       host:
         - qt6-main
         - libsecret  # [linux]
