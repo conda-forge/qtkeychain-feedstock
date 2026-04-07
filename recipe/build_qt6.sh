@@ -17,12 +17,12 @@ fi
 
 export PATH=${QT_HOST_PATH}/lib/qt6/bin:${PATH}
 which qtpaths
+ls -l ${QT_HOST_PATH}/lib/qt6/bin
 
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
     -D BUILD_WITH_QT6=TRUE \
-    -D QT_HOST_PATH=${QT_HOST_PATH} \
     ${SRC_DIR}
 
 make -j$CPU_COUNT
