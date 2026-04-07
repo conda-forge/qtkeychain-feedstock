@@ -16,7 +16,6 @@ else
 fi
 
 export PATH=${QT_HOST_PATH}/lib/qt6/bin:${PATH}
-ls -l ${QT_HOST_PATH}/lib/qt6/bin
 which qtpaths
 
 cmake ${CMAKE_ARGS} \
