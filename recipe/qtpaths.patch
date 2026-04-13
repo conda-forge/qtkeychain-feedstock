@@ -1,0 +1,37 @@
+diff -ru qtkeychain-0.15.0_orig/cmake/Modules/ECMQueryQt.cmake qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake
+--- qtkeychain-0.15.0_orig/cmake/Modules/ECMQueryQt.cmake	2026-03-31 07:36:14.007014418 +1000
++++ qtkeychain-0.15.0/cmake/Modules/ECMQueryQt.cmake	2026-03-31 10:02:27.353345653 +1000
+@@ -46,6 +46,7 @@
+ 
+ if (QT_MAJOR_VERSION STREQUAL "5")
+     # QUIET to accommodate the TRY option
++    message(WARNING "Qt5")
+     find_package(Qt${QT_MAJOR_VERSION}Core QUIET)
+     if(TARGET Qt5::qmake)
+         get_target_property(_qmake_executable_default Qt5::qmake LOCATION)
+@@ -57,14 +58,14 @@
+     endif()
+ elseif(QT_MAJOR_VERSION STREQUAL "6")
+     # QUIET to accommodate the TRY option
++    message(WARNING "Qt6")
+     find_package(Qt6 COMPONENTS CoreTools QUIET CONFIG)
+     if (TARGET Qt6::qtpaths)
+         get_target_property(_qtpaths_executable Qt6::qtpaths LOCATION)
+-
+-        set(QUERY_EXECUTABLE ${_qtpaths_executable}
+-            CACHE FILEPATH "Location of the Qt6 qtpaths executable")
++        set(QUERY_EXECUTABLE "qtpaths")
+         set(_exec_name_text "Qt6 qtpaths")
+         set(_cli_option "--query")
++        message(WARNING "Set ${QUERY_EXECUTABLE} ${_cli_option}")
+     endif()
+ endif()
+ 
+@@ -84,6 +85,7 @@
+             message(FATAL_ERROR "No ${_exec_name_text} executable found. Can't check ${qt_variable} as required")
+         endif()
+     endif()
++    message(WARNING "Running ${QUERY_EXECUTABLE} ${_cli_option} ${qt_variable}")
+     execute_process(
+         COMMAND ${QUERY_EXECUTABLE} ${_cli_option} "${qt_variable}"
+         RESULT_VARIABLE return_code
