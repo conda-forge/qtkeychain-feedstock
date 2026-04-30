@@ -1,4 +1,4 @@
-{% set version = "0.15.0" %}
+{% set version = "0.16.0" %}
 
 package:
   name: qtkeychain
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/frankosterfeld/qtkeychain/archive/{{ version }}.tar.gz
-  sha256: f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22
+  sha256: 3be26ec4ae30eecf0c2ff7572ba83799791b157c76e15a05ef35f23dc25e4054
   # Various issues with cmake finding qtpaths with Qt6. Seems to try
   # cmake instead. Patch below hardcodes name
   patches:
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [(win and vc<14) or ppc64le]
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('qtkeychain', max_pin='x.x') }}
 
@@ -27,7 +27,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - qt-main    
+    - qt-main
     - libsecret  # [linux]
     - glib       # [linux]
     - zlib       # [linux]
