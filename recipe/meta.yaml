@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [(win and vc<14) or ppc64le]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('qtkeychain', max_pin='x.x') }}
 
