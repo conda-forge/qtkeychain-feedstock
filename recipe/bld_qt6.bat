@@ -8,6 +8,7 @@ cmake -G "NMake Makefiles" ^
     -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_BUILD_TYPE=Release ^
     -D BUILD_WITH_QT6=TRUE ^
+    -D BUILD_WITH_QT5=FALSE ^
     -D QT_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     ..
 if errorlevel 1 exit 1
