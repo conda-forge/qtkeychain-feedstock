@@ -25,7 +25,7 @@ qt6_main:
 qt_main:
 - '5.15'
 qtkeychain:
-- '0.15'
+- '0.16'
 target_platform:
 - linux-aarch64
 zip_keys:
