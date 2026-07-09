@@ -8,7 +8,7 @@ cd build/
 cmake ${CMAKE_ARGS} \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D CMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
-    -D BUILD_WITH_QT6=FALSE \
+    -D BUILD_WITH_QT5=TRUE \
     ${SRC_DIR}
 
 make -j$CPU_COUNT

@@ -4,7 +4,7 @@ cd build
 cmake -G "NMake Makefiles" ^
     -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_BUILD_TYPE=Release ^
-    -D BUILD_WITH_QT6=FALSE ^
+    -D BUILD_WITH_QT5=TRUE ^
     ..
 if errorlevel 1 exit 1
 
